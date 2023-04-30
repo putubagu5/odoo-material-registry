@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+        <record id="view_material_data_form" model="ir.ui.view">
+            <field name="name">view.material.data.form</field>
+            <field name="model">material.data</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="material_code"/>
+                                <field name="material_type"/>
+                                <field name="material_buy_price"/>
+                                <field name="partner_id"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_material_data_tree" model="ir.ui.view">
+            <field name="name">view.material.data.tree</field>
+            <field name="model">material.data</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="material_code"/>
+                    <field name="material_type"/>
+                    <field name="material_buy_price"/>
+                    <field name="partner_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_material_data_search" model="ir.ui.view">
+            <field name="name">view.material.data.search</field>
+            <field name="model">material.data</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name" string="Material Name"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_view_material_data" model="ir.actions.act_window">
+            <field name="name">Material Data</field>
+            <field name="res_model">material.data</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem
+            id="menu_material_registry_root"
+            name="Material Registry"
+            sequence="33"/>
+
+        <menuitem id="menu_material_data"
+            name="Material Data"
+            action="action_view_material_data"
+            parent="menu_material_registry_root"
+            sequence="0"/>
+
+        <!-- <menuitem
+            id="menu_material_data"
+            name="Main Project"
+            action="action_view_material_data"
+            parent="ins_project.menu_pmis_project"
+            sequence="1"/> -->
+    </data>
+</odoo>
